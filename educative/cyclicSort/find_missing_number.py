@@ -6,9 +6,5 @@ def find_missing_number(nums):
       nums[i], nums[j] = nums[j], nums[i]
     else:
       i += 1
-  
-  for i, n in enumerate(nums):
-    if i != n:
-      return i
 
-  return -1
+  return next((i for i, n in enumerate(nums) if i != n), -1)

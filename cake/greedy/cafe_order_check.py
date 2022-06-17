@@ -5,10 +5,8 @@ errors: did not try my own test case
 """
 def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
 
-    # Check if we're serving orders first-come, first-served
-    rtn = True
     t = d = 0
-    
+
     for s in served_orders:
         if t < len(take_out_orders) and  s == take_out_orders[t]:
             t += 1
@@ -16,10 +14,10 @@ def is_first_come_first_served(take_out_orders, dine_in_orders, served_orders):
             d += 1
         else:
             return False
-    
-    
-        
-    return rtn
+
+
+
+    return True
 
 
 

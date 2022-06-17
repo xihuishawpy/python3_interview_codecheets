@@ -28,8 +28,7 @@ class Solution:
         rtn = []
         stk = [root]
         while stk:
-            node = stk.pop()
-            if node:
+            if node := stk.pop():
                 rtn.append(node.val)
                 stk.append(node.right)
                 stk.append(node.left)

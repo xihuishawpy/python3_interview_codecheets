@@ -8,10 +8,7 @@ almostIncreasingSequence(sequence) = true
 def almostIncreasingSequence(sequence):
     
     def isIncreasing(seq):
-        for i in range(0, len(seq)-1):
-            if seq[i] >= seq[i+1]:
-                return i
-        return -1
+        return next((i for i in range(len(seq)-1) if seq[i] >= seq[i+1]), -1)
         
     firstTest = isIncreasing(sequence)
 

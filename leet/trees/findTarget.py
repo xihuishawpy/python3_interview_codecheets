@@ -8,10 +8,9 @@ class Solution:
     def findTarget(self, root: TreeNode, k: int) -> bool:
         st = set()
         stk = [root]
-        
+
         while stk:
-            node = stk.pop()
-            if node:
+            if node := stk.pop():
                 if node.val in st:
                     return True
                 else:

@@ -9,13 +9,13 @@ class Solution:
         ans = [0] * n
         prev = 0
         stk = []
-        
+
         for l in logs:
             fn, type, time = l.split(':')
-            
+
             time = int(time)
             fn = int(fn)
-            
+
             if type == "start":
                 if stk:
                     ans[stk[-1]] += time - prev
@@ -24,7 +24,7 @@ class Solution:
             else:
                 ans[stk.pop()] += time - prev + 1
                 prev = time + 1
-                
+
         return ans
             
 

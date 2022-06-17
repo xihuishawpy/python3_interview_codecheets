@@ -15,13 +15,13 @@ class Solution:
                 elif c == '(':
                     num, i = helper([], i+1)
                 else:
-                    if sign == '+':
-                        stk.append(num)
-                    if sign == '-':
-                        stk.append(-num)
                     if sign == '*':
                         stk.append(stk.pop() * num)
-                    if sign == '/':
+                    elif sign == '+':
+                        stk.append(num)
+                    elif sign == '-':
+                        stk.append(-num)
+                    elif sign == '/':
                         stk.append(int(stk.pop() / num))
                     i += 1
                     num = 0

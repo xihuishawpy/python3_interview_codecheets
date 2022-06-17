@@ -34,7 +34,7 @@ class Solution:
                 t0 = max(t0, t1 + p)
                 t1 = max(t1, t0old - p)
             return t0
-        
+
         t0 = [0] * (k+1)
         t1 = [float(-inf)] * (k+1)
         for p in prices:

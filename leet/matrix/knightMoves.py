@@ -6,10 +6,10 @@ class Solution:
 
         while q:
             px, py, cnt = q.pop()
-            
+
             if px == abs(x) and py == abs(y):
                 return cnt 
-            
+
             for dx, dy in moves:
                 px1 = px+dx
                 py1 = py+dy
@@ -31,17 +31,17 @@ class Solution:
             else:
                 x -= 1 if x >= 1 else -1
                 y -= 2 
-                
+
         q = deque([(0,0,0)])
         visited = set()
         moves = ((2, 1), (1, 2), (-1, 2), (-2, 1), (-2, -1), (-1, -2), (1, -2), (2, -1))
 
         while q:
             px, py, cnt = q.pop()
-            
+
             if px == abs(x) and py == abs(y):
                 return cnt + res
-            
+
             for dx, dy in moves:
                 px1 = px+dx
                 py1 = py+dy

@@ -9,21 +9,22 @@ def has_palindrome_permutation(the_string):
 
     # Check if any permutation of the input is a palindrome
     st = set()
-    
+
     if len(the_string) <= 1:
         return True
-    
+
     for c in the_string:
         if c in st:
             st.remove(c)
         else:
             st.add(c)
-    
-    if len(the_string) % 2 == 1:
-        if len(st) == 1: return True
-    else:
-        if len(st) == 0: return True
 
+    if (
+        len(the_string) % 2 == 1
+        and len(st) == 1
+        or len(the_string) % 2 != 1
+        and not st
+    ): return True
     return False
 
 

@@ -26,8 +26,8 @@
       if node.data not in ht:
         ht[sum_val - node.data] = idx
       else:
-        rtnLst.insert(0, "(" + str(sum_val - node.data) + "," + str(node.data) + ")")
+        rtnLst.insert(0, f"({str(sum_val - node.data)},{str(node.data)})")
       idx += 1
       node = node.next
-    
+
     return rtnLst

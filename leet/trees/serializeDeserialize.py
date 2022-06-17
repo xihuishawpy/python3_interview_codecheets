@@ -36,11 +36,10 @@ class Codec:
             val = next(vals)
             if val == '#':
                 return None
-            else:
-                node = TreeNode(int(val))
-                node.left = dfs()
-                node.right = dfs()
-                return node
+            node = TreeNode(int(val))
+            node.left = dfs()
+            node.right = dfs()
+            return node
 
         vals = iter(data.split())
         return dfs()

@@ -7,17 +7,17 @@ errors: close but couldn't derive algo, then fumbled code
 def get_products_of_all_ints_except_at_index(int_list):
 
     rtn = [0] * (len(int_list))
-    
+
     if len(int_list) < 2:
         return
-    
+
     cur = 1
     for i in range(len(int_list)):
         rtn[i] = cur
         cur *= int_list[i]
-        
+
     cur = 1
-    for i in reversed(range(0,len(int_list))):
+    for i in reversed(range(len(int_list))):
         rtn[i] *= cur
         cur *= int_list[i]
 

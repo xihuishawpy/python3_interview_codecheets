@@ -17,14 +17,14 @@ class Solution:
                 else:
                     if sign == '+':
                         stk.append(num)
-                    if sign == '-':
+                    elif sign == '-':
                         stk.append(-num)
                     sign = c
                     num = 0
                     i += 1
                     if c == ')':
                         return sum(stk), i
-                
+
             return sum(stk)
             
         return helper([],0)

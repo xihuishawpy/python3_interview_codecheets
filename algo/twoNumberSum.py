@@ -6,12 +6,11 @@ a = c - b
 """
 def twoNumberSum(array, targetSum):
     rtnList = []
-	ht = {}
-	
-	for n in array:
-		if n in ht:
-			rtnList.append(n)
-			rtnList.append(targetSum - n)			
-		ht[targetSum-n] = True
-	
-	return rtnList
+    ht = {}
+
+    for n in array:
+        if n in ht:
+            rtnList.extend((n, targetSum - n))
+        ht[targetSum-n] = True
+
+    return rtnList

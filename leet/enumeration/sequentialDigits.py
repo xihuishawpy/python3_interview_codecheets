@@ -10,10 +10,6 @@ class Seqs:
 class Solution:
     s = Seqs()
     def sequentialDigits(self, low: int, high: int) -> List[int]:
-        rtn = list()
         candidates = self.s.nums
-        for c in candidates:
-            if low <= c <= high:
-                rtn.append(c)
-        return rtn
+        return [c for c in candidates if low <= c <= high]
         

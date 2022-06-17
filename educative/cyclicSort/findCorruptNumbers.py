@@ -9,7 +9,7 @@ def find_corrupt_numbers(nums):
       nums[i], nums[j] = nums[j], nums[i]
     else:
       i += 1
-  
+
   dup = 0 
   missing = 0
 

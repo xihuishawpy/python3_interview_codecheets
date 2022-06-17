@@ -7,7 +7,7 @@ class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         stk = [0]
         visited = set()
-        
+
         while stk:
             i = stk.pop()
             visited.add(i)
@@ -20,7 +20,7 @@ class Solution:
                         return True
                     if wend not in visited:
                         stk.append(wend)
-        
+
         return False
 
 """

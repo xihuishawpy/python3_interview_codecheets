@@ -7,14 +7,14 @@
 # Construct Binary Tree from String
 class Solution:
     def str2tree(self, s: str) -> TreeNode:
-        if len(s)==0:
+        if not s:
             return
-        
+
         stk = [TreeNode()]
         num = ''
-        
+
         s += ')'
-        
+
         for i, c in enumerate(s):
             if c == ')':
                 stk.pop()
@@ -28,5 +28,5 @@ class Solution:
                         stk[-1].left = node
                     stk.append(node)
                     num = ''
-                    
+
         return stk[0].left

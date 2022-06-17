@@ -6,7 +6,7 @@ class Solution:
     """
     def minAddToMakeValid(self, s: str) -> int:
         l = r = 0
-        
+
         for c in s:
             if c == '(':
                 l += 1
@@ -15,5 +15,5 @@ class Solution:
                     l -= 1
                 else:
                     r += 1
-        
+
         return l + r

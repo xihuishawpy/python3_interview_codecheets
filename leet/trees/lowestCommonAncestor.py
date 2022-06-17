@@ -12,20 +12,19 @@ class Solution:
         self.lc = None
         # bubble up true if left or right are found
         def dfs(node):
-            if node:
-                left = dfs(node.left)
-                right = dfs(node.right)
-                found = node == p or node == q
-                
-                if left and right:
-                    self.lc = node 
-                
-                if (left or right) and found:
-                    self.lc = node 
-                
-                return left or right or found
-                    
-            return False
+            if not node:
+                return False
+            left = dfs(node.left)
+            right = dfs(node.right)
+            found = node in [p, q]
+
+            if left and right:
+                self.lc = node 
+
+            if (left or right) and found:
+                self.lc = node 
+
+            return left or right or found
         
         dfs(root)
         

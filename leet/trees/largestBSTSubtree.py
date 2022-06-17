@@ -9,10 +9,10 @@ class Solution:
         def dfs(node):
             if not node:
                 return 0, float("inf"), float("-inf")
-            
+
             ln, lmin, lmax = dfs(node.left)
             rn, rmin, rmax = dfs(node.right)
-            
+
             if lmax < node.val < rmin:
                 return ln + rn + 1, min(lmin, node.val), max(rmax, node.val)
             else:

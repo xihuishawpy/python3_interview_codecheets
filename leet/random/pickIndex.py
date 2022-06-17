@@ -29,7 +29,7 @@ class Solution:
         self.S = sum(w)
         self.picks = []
         total = 0
-        for i, weight in enumerate(w):
+        for weight in w:
             total += weight
             self.picks.append(total)
         

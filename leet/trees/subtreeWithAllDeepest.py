@@ -11,7 +11,7 @@ class Solution:
             if node:
                 l, ln = dfs(node.left, d)
                 r, rn = dfs(node.right, d)
-                
+
                 if l > r:
                     return l+1, ln
                 elif l < r:

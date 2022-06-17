@@ -28,8 +28,8 @@ class Solution:
         if n == 0:
             return ""
         elif n < 20:
-            return self.lessThan20[n] + " "
+            return f"{self.lessThan20[n]} "
         elif n < 100:
-            return self.tens[n//10] + " " + self.helper(n%10)
+            return f"{self.tens[n//10]} {self.helper(n%10)}"
         else:
-            return self.lessThan20[n//100] + " Hundred " + self.helper(n%100)
+            return f"{self.lessThan20[n//100]} Hundred {self.helper(n%100)}"

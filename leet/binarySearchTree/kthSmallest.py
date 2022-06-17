@@ -27,6 +27,6 @@ class Solution:
                     stk.append((node.right, False))
                     stk.append((node, True))
                     stk.append((node.left, False))
-        
+
         return -1
                 

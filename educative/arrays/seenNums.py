@@ -6,12 +6,10 @@
 
 """
 def two_sum(A, target):
-  if len(A) == 0 or len(A) == 1:
+  if len(A) in {0, 1}:
     return False
 
-  seenums = {}
-  seenums[target - A[0]] = True
-
+  seenums = {target - A[0]: True}
   for i in range(1, len(A)):
     if A[i] in seenums:
       return True

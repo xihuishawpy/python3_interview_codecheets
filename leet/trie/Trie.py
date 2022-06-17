@@ -32,19 +32,14 @@ class Trie:
         Returns if the word is in the trie.
         """
         node = self.trie 
-        
+
         for c in word:
             if c in node:
                 node = node[c]
             else:
                 return False
-        
+
         return '$' in node
-        
-        """
-        time: c in prefix
-        space: 1
-        """
     def startsWith(self, prefix: str) -> bool:
         """
         Returns if there is any word in the trie that starts with the given prefix.

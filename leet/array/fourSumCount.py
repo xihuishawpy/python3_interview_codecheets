@@ -9,9 +9,9 @@ class Solution:
         for a in nums1:
             for b in nums2:
                 cnt[a+b] += 1
-        
+
         for c in nums3:
             for d in nums4:
                 rtn += cnt[-c-d]
-        
+
         return rtn

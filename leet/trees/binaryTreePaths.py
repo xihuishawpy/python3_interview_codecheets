@@ -18,7 +18,7 @@ class Solution:
             if node.left is None and node.right is None:
                 rtn.append(path)
             if node.left:
-                stk.append((node.left, path + "->" + str(node.left.val)))
+                stk.append((node.left, f"{path}->{str(node.left.val)}"))
             if node.right:
-                stk.append((node.right, path + "->" + str(node.right.val)))
+                stk.append((node.right, f"{path}->{str(node.right.val)}"))
         return rtn

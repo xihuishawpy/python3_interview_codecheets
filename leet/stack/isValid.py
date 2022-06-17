@@ -2,7 +2,7 @@ class Solution:
     def isValid(self, s: str) -> bool:
         while '[]' in s or '()' in s or '{}' in s:
             s = s.replace('[]','').replace('()','').replace('{}','')
-        return len(s) == 0
+        return not s
 
 
 """
@@ -20,11 +20,11 @@ class Solution:
         for c in s:
             if c in mp.values():
                 stk.append(c)
-            elif c in mp.keys():
+            elif c in mp:
                 test = stk.pop() if stk else '#'
                 if mp[c] != test:
                     return False
-        return len(stk) == 0
+        return not stk
 
                 
 class Solution:

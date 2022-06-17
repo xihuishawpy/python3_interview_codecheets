@@ -13,7 +13,7 @@ def reverseInParentheses(inputString):
     rtn = [''] # makes rtn[len(rtn)-2] work with (bar)
     # which becomes '', 'bar' - len(2)-2=rtn[0] 
     # which pops to 'rab'
-    
+
     for c in inputString:
         if c == '(':
             rtn.append('')
@@ -21,5 +21,5 @@ def reverseInParentheses(inputString):
             rtn[len(rtn)-2] += rtn.pop()[::-1]
         else:
             rtn[-1] += c
-    
+
     return "".join(rtn)

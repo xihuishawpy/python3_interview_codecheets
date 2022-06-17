@@ -8,7 +8,7 @@ class Solution:
         rtn = []
         a1 = len(a) - 1
         b1 = len(b) - 1
-  
+
         carry = 0
         while a1 >= 0 or b1 >= 0:
             d1 = 0
@@ -21,7 +21,7 @@ class Solution:
             rtn.append(chr(digit + ord('0')))
             a1 -= 1
             b1 -= 1
-        
+
         if carry:
             rtn.append(chr(carry + ord('0')))
 
@@ -29,10 +29,10 @@ class Solution:
 
     def addBinary(self, a: str, b: str) -> str:
         rtn = deque()
-        
+
         a = list(a)
         b = list(b)
-        
+
         carry = 0
         while a or b:
             a1 = ord(a.pop()) - ord('0') if a else 0
@@ -41,9 +41,9 @@ class Solution:
             digit = total % 2
             carry = total // 2
             rtn.appendleft(str(digit))
-        
+
         if carry:
             rtn.appendleft(str(carry))
-        
+
         return "".join(rtn)
         

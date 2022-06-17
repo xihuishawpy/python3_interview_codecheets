@@ -29,10 +29,10 @@ class Solution:
         self.curLevel = 0
         self.curMax = float('-inf')
         self.rtn = []
-        
+
         if root is None:
             return
-        
+
         d = deque([(root, 0)])            
         while d:
             node, lvl = d.popleft()
@@ -44,7 +44,7 @@ class Solution:
                 self.curMax = max(self.curMax, node.val)
                 d.append((node.left, lvl+1))
                 d.append((node.right, lvl+1))
-        
+
         self.rtn.append(self.curMax)
 
         return self.rtn

@@ -11,13 +11,13 @@ class Solution:
     def mergeKLists(self, lists: List[ListNode]) -> ListNode:
         prehead = ListNode()
         heap = []
-        for i in range(len(lists)):
-            node = lists[i]
+        for list_ in lists:
+            node = list_
             while node:
                 heapq.heappush(heap, node.val)
-                node = node.next 
+                node = node.next
         node = prehead
-        while len(heap) > 0:
+        while heap:
             val = heapq.heappop(heap)
             node.next = ListNode()
             node = node.next 

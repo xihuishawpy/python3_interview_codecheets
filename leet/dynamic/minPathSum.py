@@ -20,8 +20,8 @@ class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
         m = len(grid) # Row
         n = len(grid[0]) # Column
-        for x in range(0, m):
-            for y in range(0,n):
+        for x in range(m):
+            for y in range(n):
                 if x == 0 and y == 0:
                     continue
                 if x == 0:

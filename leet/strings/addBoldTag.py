@@ -19,5 +19,5 @@ class Solution:
             else:
                 ans += s[j]
                 j += 1
-        
+
         return ans

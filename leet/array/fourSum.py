@@ -4,7 +4,7 @@ class Solution:
         def findKSum(nums : List[int], target: int, K: int, tmp: List[int], rtn: List[int]):
             if len(nums) < K or K < 2 or target < nums[0] * K or target > nums[-1]*K: # Early termination optimizations
                 return
-            
+
             # 2 sum
             if K == 2:
                 l = 0
@@ -22,9 +22,9 @@ class Solution:
                         l += 1
                     else:
                         r -= 1
-                        
+
             else:
-                for i in range(0, len(nums)-K+1):
+                for i in range(len(nums)-K+1):
                     if i == 0 or i > 0 and nums[i-1] != nums[i]:
                         findKSum(nums[i+1:], target-nums[i], K-1, tmp+[nums[i]], rtn)
             return

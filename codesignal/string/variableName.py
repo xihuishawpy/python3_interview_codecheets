@@ -8,10 +8,7 @@ variableName(name) = false;
 def variableName(name):
     if not name or name[0].isdigit():
         return False
-    for c in name:
-        if not c.isalnum() and c != '_':
-            return False
-    return True
+    return not any(not c.isalnum() and c != '_' for c in name)
 
 def variableName(name):
     return name.isidentifier()

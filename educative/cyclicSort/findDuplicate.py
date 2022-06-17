@@ -11,8 +11,8 @@ def find_duplicate(nums):
     j = nums[i] - 1
     if nums[i] != nums[j]:
       nums[j], nums[i] = nums[i], nums[j]
-    else:
-      if i != j:
-        return nums[i]
+    elif i == j:
       i += 1
+    else:
+      return nums[i]
   return -1

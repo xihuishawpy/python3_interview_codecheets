@@ -13,22 +13,21 @@ def find_first_k_missing_positive(nums, k):
       nums[i], nums[j] = nums[j], nums[i]
     else:
       i += 1
-  
+
   ht = {}
   missingNumbers = []
 
   for x, n in enumerate(nums):
-    if len(missingNumbers) < k:
-      if x + 1 != n:
-        missingNumbers.append(x+1)
-        ht[x+1] = True
+    if len(missingNumbers) < k and x + 1 != n:
+      missingNumbers.append(x+1)
+      ht[x+1] = True
     if n > 0:
       ht[n] = True 
-  
+
   z = 1
   while len(missingNumbers) < k:
     if z not in ht:
       missingNumbers.append(z)
     z += 1      
-    
+
   return missingNumbers

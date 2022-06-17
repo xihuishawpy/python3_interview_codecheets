@@ -10,9 +10,9 @@ def find_second_largest(root_node):
     node = root_node
     maxVal = float('-inf')
     nextMaxVal = float('-inf')
-    
+
     while node:
-        
+
         if node.value > maxVal:
             nextMaxVal = maxVal
             maxVal = node.value
@@ -25,7 +25,7 @@ def find_second_largest(root_node):
             node = node.left
         else:
             node = None
-            
+
     return nextMaxVal
 
 

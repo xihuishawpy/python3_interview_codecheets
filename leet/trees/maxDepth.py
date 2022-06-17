@@ -41,16 +41,12 @@ class Solution:
     def maxDepth(self, root: 'Node') -> int:
 
         def bfs(node):
-            if node is not None:
-                rtn = {}
-                for i, c in enumerate(node.children):
-                    rtn[i] = bfs(c)
-                
-                m = 0
-                for k in rtn:
-                    m = max(m, rtn[k])
-                return m + 1
-            else:
+            if node is None:
                 return 0
+            rtn = {i: bfs(c) for i, c in enumerate(node.children)}
+            m = 0
+            for k in rtn:
+                m = max(m, rtn[k])
+            return m + 1
             
         return bfs(root)

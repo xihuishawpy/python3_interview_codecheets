@@ -4,17 +4,13 @@ def find_repeat(numbers):
 
     # Find a number that appears more than once
     l, r = 1, len(numbers) - 1
-    
+
     while l < r:
         mid = l + (r-l)//2
-        
-        count = 0
-        for n in numbers:
-            if l <= n <= mid:
-                count += 1
-        
+
+        count = sum(l <= n <= mid for n in numbers)
         dist = mid - l + 1
-        
+
         if count > dist:
             r = mid
         else:

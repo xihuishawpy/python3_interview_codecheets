@@ -10,10 +10,7 @@ class Solution:
         # [[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]]
         for i, c in enumerate(text1):
             for j, d in enumerate(text2):
-                if c == d:
-                    dp[i + 1][j + 1] = 1 + dp[i][j]  
-                else:
-                    dp[i + 1][j + 1] = max(dp[i][j + 1], dp[i + 1][j])
+                dp[i + 1][j + 1] = 1 + dp[i][j] if c == d else max(dp[i][j + 1], dp[i + 1][j])
         return dp[-1][-1]
 # [[0,0,0,0],[0,1,1,1],[0,1,1,1],[0,1,2,2],[0,1,2,2],[0,1,2,3]]
 # abcde

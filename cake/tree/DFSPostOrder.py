@@ -21,15 +21,14 @@ def is_balancedRecurive(tree_root):
 
 
 def postOrderHack(tree_root):
-  res, stack = [], [tree_root]
-  while stack:
-    node = stack.pop()
-    if node:
-      res.append(node.value)
-      stack.append(node.left)
-      stack.append(node.right)
-  print(res[::-1])
-  return True
+    res, stack = [], [tree_root]
+    while stack:
+        if node := stack.pop():
+            res.append(node.value)
+            stack.append(node.left)
+            stack.append(node.right)
+    print(res[::-1])
+    return True
 
 #DFS PostOrder  4 5 2 3 1  (Left-Right-Root)
 def postOrder(tree_root):

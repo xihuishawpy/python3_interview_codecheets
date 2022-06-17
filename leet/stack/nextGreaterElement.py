@@ -4,14 +4,10 @@ class Solution:
         # Get precomputed answers with stack
         hm = {}
         stk = []
-        
+
         for n in nums2:
             while len(stk) and stk[-1]<n:
                 hm[stk.pop()] = n
             stk.append(n)
-        
-        rtn = []
-        for n in nums1:
-            rtn.append(hm.get(n, -1))
-        
-        return rtn
+
+        return [hm.get(n, -1) for n in nums1]

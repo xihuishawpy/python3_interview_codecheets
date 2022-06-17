@@ -6,7 +6,7 @@ def reverse(list_of_chars):
     # Reverse the input list of chars in place
     l = 0
     r = len(list_of_chars) - 1
-    
+
     while l < r:
         list_of_chars[l], list_of_chars[r] = list_of_chars[r], list_of_chars[l] 
         l += 1

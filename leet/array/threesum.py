@@ -37,17 +37,16 @@ if i==0 or nums[i] != nums[i-1]:
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         res = []
-        
+
         if len(nums) < 3:
             return res
-        
+
         nums.sort()     
-   
-        i = 0
-        while i < len(nums):    
-            ht={}
-            j = i + 1     
+
+        for i in range(len(nums)):
+            j = i + 1
             if i==0 or nums[i] != nums[i-1]:
+                ht={}
                 while j < len(nums):
                     if nums[j] in ht:
                         res.append([ht[nums [j]][0],ht[nums[j]][1], nums[j]])
@@ -56,7 +55,5 @@ class Solution:
                     compliment = -nums[j] - nums[i]
                     ht[compliment] = [nums[i], nums[j]]
                     j += 1
-                    
-            i += 1
-            
+
         return res

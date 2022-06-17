@@ -15,10 +15,10 @@ class Solution:
         def helper(node):
             if node is None:
                 return 0
-            
+
             left = helper(node.left)
             right = helper(node.right)
-            
+
             if node.left and node.right:
                 return min(left, right) + 1
             else:

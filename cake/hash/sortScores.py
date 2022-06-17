@@ -10,20 +10,20 @@ def sort_scores(unsorted_scores, highest_possible_score):
 
     # Sort the scores in O(n) time
     rtn = []
-    
+
     scnt = [0] * (highest_possible_score + 1)
 
     for s in unsorted_scores:
         scnt[s] += 1
-    
-    
+
+
     i = highest_possible_score 
     while i > 0:
         while scnt[i] > 0:
             rtn.append(i)
             scnt[i] -= 1
         i -= 1
-            
+
     return rtn
 
 

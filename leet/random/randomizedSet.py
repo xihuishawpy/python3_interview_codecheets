@@ -27,10 +27,10 @@ class RandomizedSet:
         if val in self.pos:
             posToDel = self.pos[val]
             endv = self.data[-1]
-            
+
             self.pos[endv] = posToDel
             self.data[posToDel] = endv
-            
+
             self.data.pop()
             self.pos.pop(val,0)
             return True

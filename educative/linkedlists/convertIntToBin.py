@@ -12,7 +12,7 @@ def convert_int_to_bin(dec_num):
     bn = dec_num % 2
     sk.append(bn)
     dec_num = dec_num // 2
- 
+
   while sk:
     rtn = rtn + str(sk.pop()) 
   return rtn

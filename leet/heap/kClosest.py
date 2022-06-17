@@ -33,7 +33,7 @@ class Solution:
         def part(arr, l, r):
             pivot = arr[r]
             a = l
-            for i in range(l, r):
+            for i in range(a, r):
                 if arr[i][0]**2 + arr[i][1]**2 < pivot[0]**2 + pivot[1]**2:
                     arr[i], arr[a] = arr[a], arr[i]
                     a += 1

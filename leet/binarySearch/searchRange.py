@@ -8,7 +8,4 @@ class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
         s = bisect.bisect_left(nums, target)
         e = bisect.bisect(nums, target) -1
-        if s <= e:
-            return [s,e]
-        else:
-            return [-1,-1]
+        return [s,e] if s <= e else [-1,-1]

@@ -4,7 +4,7 @@ def array_advance(A):
     lastIndex = len(A)-1
 
     # If furthest reach still has range and we have not reached goal
-    while i <= furthest_reached and furthest_reached < lastIndex:
+    while i <= furthest_reached < lastIndex:
         furthest_reached = max(furthest_reached, A[i]+i)
         i += 1
 

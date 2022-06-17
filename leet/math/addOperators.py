@@ -13,11 +13,11 @@ class Solution:
                 if eval(path) == target:
                     self.ans.append(path)
                 return
-            
+
             dfs(idx + 1, path + num[idx] + "+")
             dfs(idx + 1, path + num[idx] + "-")
             dfs(idx + 1, path + num[idx] + "*")
-            if (num[idx] != '0' or (path and path[-1] not in ['-','+','*'] and num[idx]=='0')):
+            if num[idx] != '0' or path and path[-1] not in ['-', '+', '*']:
                 dfs(idx + 1, path + num[idx])
 
         
@@ -35,18 +35,18 @@ class Solution:
                 if val == target and cur == 0:
                     ans.append("".join(eq[1:]))
                 return
-            
+
             cur = cur *10 + int(num[i])
             str_op = str(cur)
-            
+
             if cur > 0:
                 dfs(i+1, prev, cur, val, eq)
-            
-            dfs(i+1, cur, 0, val + cur, eq + "+" + str_op)
-            
+
+            dfs(i+1, cur, 0, val + cur, f"{eq}+{str_op}")
+
             if eq:
-                dfs(i+1, -cur, 0, val - cur, eq + '-' + str_op) 
-                dfs(i+1, cur * prev, 0, val - prev + (cur*prev), eq + '*' + str_op) 
+                dfs(i+1, -cur, 0, val - cur, f'{eq}-{str_op}')
+                dfs(i+1, cur * prev, 0, val - prev + (cur*prev), f'{eq}*{str_op}') 
 
         
         dfs(0,0,0,0,"")
