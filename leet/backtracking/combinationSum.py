@@ -24,8 +24,8 @@ class Solution:
             if remain == 0:
                 rtn.append(tmp)
                 return
-            
-            for i in range(0, len(path)):
+
+            for i in range(len(path)):
                 dfs(path[i:], remain-path[i], tmp + [path[i]])
                 
         dfs(cand, target, [])

@@ -9,10 +9,10 @@ def plus_one(A):
 
     carry, total = 1, 0
 
-    if len(A) == 0 or len(A) == 1:
+    if len(A) in {0, 1}:
         return 
 
-    for i in reversed(range(0, len(A))):
+    for i in reversed(range(len(A))):
         total = (A[i] + carry) 
         carry =  total // 10
         A[i] = total % 10

@@ -11,7 +11,7 @@ class Solution:
         complete_str = set(''.join(wordDict))
         if len(letters - complete_str) > 0:
             return []
-        
+
         while stk:
             i, path = stk.pop()
 

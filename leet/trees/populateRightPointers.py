@@ -17,7 +17,7 @@ class Solution:
         prev = None
         head = root
         cnt = 0
-        
+
         while queue:    
             node, d = queue.pop()
             if node:
@@ -29,8 +29,8 @@ class Solution:
 
                 queue.appendleft((node.right,d+1))
                 queue.appendleft((node.left, d+1))
-                
-        
+
+
         return head
 
 

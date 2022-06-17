@@ -10,10 +10,8 @@
         return 0
 
       size = 1
-      stk = []
       myNode = node
-      stk.append(myNode)
-
+      stk = [myNode]
       while stk:
         myNode = stk.pop()
         if myNode.left:

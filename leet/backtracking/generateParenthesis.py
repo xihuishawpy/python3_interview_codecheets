@@ -10,9 +10,9 @@ class Solution:
             stk.append(s)
             return
         if left > 0:
-            self.backtracking(stk, n, left-1, right+1, s + "(")
+            self.backtracking(stk, n, left-1, right+1, f"{s}(")
         if right > 0:
-            self.backtracking(stk, n, left, right-1, s + ")")    
+            self.backtracking(stk, n, left, right-1, f"{s})")    
 
 """
 nth Catalan number 1/n+1(2n/n) which is bounded asymptotically
@@ -30,9 +30,9 @@ class Solution:
                 rtn.append(s)
                 return
             if left > 0:
-                dfs(left-1,right+1,s+'(')
+                dfs(left-1, right+1, f'{s}(')
             if right > 0:
-                dfs(left,right-1,s+')')
+                dfs(left, right-1, f'{s})')
         
         dfs(n,0,"")
         return rtn

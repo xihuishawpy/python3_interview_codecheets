@@ -6,9 +6,7 @@ class Solution:
     def groupStrings(self, strings: List[str]) -> List[List[str]]:
         ans = collections.defaultdict(list)
         for s in strings:
-            tmp = []
-            for c in s:
-                tmp.append((ord(s[0]) - ord(c))%26)
+            tmp = [(ord(s[0]) - ord(c))%26 for c in s]
             ans[tuple(tmp)].append(s)
         return ans.values()
 

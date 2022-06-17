@@ -8,12 +8,12 @@ def non_repeat_substring(str):
   maxLen, i = 0, 0
   ht = {}
 
-  for i, c in enumerate(str):
+  for c in str:
     if c in ht:
       maxLen = max(maxLen, len(ht))
       ht.clear()
     ht[c] = True
-  
+
   maxLen = max(len(ht), maxLen) 
 
   return maxLen

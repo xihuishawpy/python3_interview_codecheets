@@ -9,7 +9,7 @@ def lineEncoding(s):
     cnt = 0
     last = s[0]
     rtn = []
-    
+
     for c in s:
         if last != c:
             if cnt > 1:
@@ -19,11 +19,11 @@ def lineEncoding(s):
             cnt = 1
         else:
             cnt += 1
-    
+
     if cnt > 1:
         rtn.append(str(cnt))
     rtn.append(last)
-        
+
     return "".join(rtn)
         
 from itertools import groupby

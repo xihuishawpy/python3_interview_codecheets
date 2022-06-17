@@ -36,7 +36,7 @@ def reverse_sub_list(head, p, q):
   OrigPrev.next = subNode # 1->4 
   subListHead.next = subNode.next # 2->5
   subNode.next = prev # 3->4
-  
+
   return head
 
 

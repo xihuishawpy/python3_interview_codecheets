@@ -10,9 +10,7 @@ addBorder(picture) = ["*****",
 """
 def addBorder(picture):
     b = '*'*(len(picture[0])+2)
-    rtn = []
-    rtn.append(b)
-    for p in picture:
-        rtn.append('*'+p+'*')
+    rtn = [b]
+    rtn.extend(f'*{p}*' for p in picture)
     rtn.append(b)
     return rtn

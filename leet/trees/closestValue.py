@@ -38,16 +38,12 @@ class Solution:
     def closestValue2(self, root: TreeNode, target: float) -> int:
         self.dif = float('inf')
         self.val = root.val
-        
+
         node = root
-        
+
         while node:
             if abs(node.val - target) < self.dif:
                 self.dif = abs(node.val - target)
                 self.val = node.val
-            if target < node.val:
-                node = node.left
-            else:
-                node = node.right
-        
+            node = node.left if target < node.val else node.right
         return self.val

@@ -44,15 +44,12 @@ class Solution:
     def countComponents(self, n: int, edges: List[List[int]]) -> int:
         dsu = DSU(n)
         vs = set()
-        
+
         for e in edges:
             dsu.union(e[0], e[1])
             vs.add(e[0])
             vs.add(e[1])
-            
-        st = set()
-        
-        for e in edges:
-            st.add(dsu.find(e[0]))
-            
+
+        st = {dsu.find(e[0]) for e in edges}
+
         return len(st) + (n - len(vs))

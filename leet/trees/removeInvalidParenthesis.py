@@ -48,11 +48,7 @@ class Solution:
         # set is used here in order to avoid duplicate element
         level = {s}
         while True:
-            valid = []
-            for elem in level:
-                if self.isValid(elem):
-                    valid.append(elem)
-            if valid:
+            if valid := [elem for elem in level if self.isValid(elem)]:
                 return valid
             # initialize an empty set
             new_level = set()

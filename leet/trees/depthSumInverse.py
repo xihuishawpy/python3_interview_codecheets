@@ -53,7 +53,7 @@ class Solution:
     def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:
         weighted = 0
         unweighted = 0
-        
+
         while nestedList:
             level = []
             for item in nestedList:
@@ -63,7 +63,7 @@ class Solution:
                     level = level + item.getList()
             weighted += unweighted # repeatedly adds the previous level
             nestedList = level
-        
+
         return weighted
 
     def depthSumInverse(self, nestedList: List[NestedInteger]) -> int:

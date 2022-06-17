@@ -13,7 +13,7 @@ def merge_lists(my_list, alices_list):
     # Combine the sorted lists into one large sorted list
     merged = []
     m = a = 0
-    
+
     while m < len(my_list) and a < len(alices_list):
         if my_list[m] <= alices_list[a]:
             merged.append(my_list[m])
@@ -21,11 +21,11 @@ def merge_lists(my_list, alices_list):
         else:
             merged.append(alices_list[a])
             a += 1
-       
+
     while m < len(my_list):
         merged.append(my_list[m])
         m += 1
-    
+
     while a < len(alices_list):
         merged.append(alices_list[a])
         a += 1  

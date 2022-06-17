@@ -16,9 +16,9 @@ class Trie:
             if c not in tmp:
                 return []
             tmp = tmp[c]
-        
+
         rtn = []
-        
+
         for k in tmp:
             if k == '#':
                 rtn.append(tmp[k])
@@ -39,7 +39,7 @@ class AutocompleteSystem:
             self.cnt[w] = times[i]
         
     def input(self, c: str) -> List[str]:
-        
+
         if c != '#':
             self.userKeys += c
             # Get list of correct strings

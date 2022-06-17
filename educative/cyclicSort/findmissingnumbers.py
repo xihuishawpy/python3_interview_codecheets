@@ -8,13 +8,7 @@ def find_missing_numbers(nums):
     else:
       i += 1
 
-  missingNumbers = []
-
-  for x, n in enumerate(nums):
-    if x+1 != n:
-      missingNumbers.append(x+1)
-
-  return missingNumbers
+  return [x+1 for x, n in enumerate(nums) if x+1 != n]
 
 
 def main():

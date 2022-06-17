@@ -26,11 +26,7 @@ class NumArray:
         print(nums)
         
     def sumRange(self, left: int, right: int) -> int:
-        if left > 0:
-            return self.nums[right] - self.nums[left-1]
-        else:
-            return self.nums[right]
-        return 
+        return self.nums[right] - self.nums[left-1] if left > 0 else self.nums[right] 
 
 
 # Your NumArray object will be instantiated and called as such:

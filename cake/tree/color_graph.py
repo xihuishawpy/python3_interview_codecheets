@@ -17,13 +17,10 @@ class GraphNode:
 def color_graph(graph, colors):
     
     for node in graph:
-        nc = set()
-        for n in node.neighbors:
-            nc.add(n.color)
-            
+        nc = {n.color for n in node.neighbors}
         for c in colors:
             if c not in nc:
                 node.color = c
                 break
-        
+
     return 0

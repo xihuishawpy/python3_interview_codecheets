@@ -11,7 +11,7 @@ class Solution:
     def pivotIndex(self, nums: List[int]) -> int:
         ps = 0
         rsum = sum(nums)
-        
+
         for i, n in enumerate(nums):
             ps += n
             if ps == rsum:

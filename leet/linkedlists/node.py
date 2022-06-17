@@ -21,7 +21,7 @@ class AllOne:
             new.prev.next = new.next.prev = new
         else:
             new = node.prev 
-        
+
         new.st.add(key)
         return new
             
@@ -32,7 +32,7 @@ class AllOne:
             new.prev.next = new.next.prev = new
         else:
             new = node.next
-        
+
         new.st.add(key)
         return new
 
@@ -66,18 +66,14 @@ class AllOne:
         """
         Returns one of the keys with maximal value.
         """
-        if not self.tail.prev.st:
-            return ""
-        return next(iter(self.tail.prev.st))
+        return next(iter(self.tail.prev.st)) if self.tail.prev.st else ""
         
 
     def getMinKey(self) -> str:
         """
         Returns one of the keys with Minimal value.
         """
-        if not self.head.next.st:
-            return ""
-        return next(iter(self.head.next.st))
+        return next(iter(self.head.next.st)) if self.head.next.st else ""
 
 
 

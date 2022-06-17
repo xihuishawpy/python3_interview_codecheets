@@ -11,13 +11,12 @@ class Solution:
         def dfs(node, tmpSum):
             if node is None:
                 return 0
-            
+
             tmpSum += node.val
 
-            if node.left is None and node.right is None:
-                if tmpSum == targetSum:
-                    self.foundSum = True
-            
+            if node.left is None and node.right is None and tmpSum == targetSum:
+                self.foundSum = True
+
             dfs(node.left, tmpSum)
             dfs(node.right, tmpSum)
             

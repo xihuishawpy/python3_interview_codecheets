@@ -2,7 +2,7 @@ class Solution:
     def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
         adj = collections.defaultdict(set)
         emToName = {}
-        
+
         for a in accounts:
             name = a[0]
             for em in a[1:]:

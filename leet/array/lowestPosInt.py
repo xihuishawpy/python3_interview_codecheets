@@ -21,17 +21,9 @@ class Solution:
 # [0, 1000]
 
 def lowestPosInt( nums ) -> int:
-    s = set()
+    s = set(nums)
 
-    for n in nums:
-        s.add(n)
-
-    # 0, 1, 2, 3, 4
-    for i in range(len(nums)):
-        if i not in s:
-            return i
-    
-    return len(nums)
+    return next((i for i in range(len(nums)) if i not in s), len(nums))
 
 test1 = [0, 1000]
 test2 = [2,3,0,5]

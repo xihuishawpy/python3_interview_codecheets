@@ -23,9 +23,7 @@ class Solution:
             return 0
         
         def check(m: int):
-            tot = 0
-            for r in ribbons:
-                tot += r // m
+            tot = sum(r // m for r in ribbons)
             if k > tot:
                 return True
             return False

@@ -2,32 +2,32 @@ class Solution:
     def shortestDistance(self, grid: List[List[int]]) -> int:
         if not grid:
             return -1
-        
+
         Y = len(grid)
         X = len(grid[0])
-        
+
         B = 0
         for y in range(Y):
             for x in range(X):
                 if grid[y][x] == 1:
                     B += 1
-        
+
         minDist = float('inf')
-        
+
         for my in range(Y):
             for mx in range(X):
                 visited = [[False] * X for _ in range(Y)]
 
                 if grid[my][mx] != 0:
                     continue
-                
+
                 q = deque([(my,mx,0)])
                 blds = 0
                 dist = 0
-                
+
                 while q:
                     y, x, cnt = q.pop()
-                    
+
                     if grid[y][x] == 1:
                         dist += cnt
                         blds += 1

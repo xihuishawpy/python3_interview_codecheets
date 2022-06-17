@@ -48,17 +48,17 @@ class Solution:
         maxI = 0
         dcr = False
         i = 0
-        
-        if len(nums) == 0 or len(nums) == 1:
+
+        if len(nums) in {0, 1}:
             return
-        
+
         # Get max num
         while i < len(nums):
             if maxDcr <= nums[i]:
                 maxDcr = nums[i]
                 maxI = i
             i += 1
-        
+
         # If max, reverse then return
         if maxI == 0:
             i = 0
@@ -67,12 +67,12 @@ class Solution:
                 nums[i], nums[end] = nums[end], nums[i]
                 i += 1
             return
-        
+
         if maxI == len(nums) - 1:
             nums[maxI], nums[maxI-1] = nums[maxI-1], nums[maxI]
             return
-        
-        
+
+
         # Get next max num (TODO: if no nextMax)
         i = maxI + 1
         nextMax = float('-inf')
@@ -82,18 +82,18 @@ class Solution:
                 nextMax = nums[i]
                 nextMaxI = i
             i += 1
-        
+
         # Swap pivots
         nums[maxI-1], nums[nextMaxI] = nums[nextMaxI], nums[maxI-1]
-        
+
         #Reverse sub
-        offset = maxI 
+        offset = maxI
         i = offset
-        
+
         while i < len(nums) - (len(nums) - offset) // 2:
             end = len(nums) - 1 - i + offset
             nums[i], nums[end] = nums[end], nums[i]
             i += 1
-        
+
         return
 

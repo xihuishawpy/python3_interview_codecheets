@@ -13,8 +13,4 @@ def find_first_missing_positive(nums):
     else:
       i += 1
 
-  for x, n in enumerate(nums):
-    if x+1 != n:
-      return x+1
-
-  return -1
+  return next((x+1 for x, n in enumerate(nums) if x+1 != n), -1)

@@ -20,7 +20,7 @@ def sum_two_lists(self, llist):
             rtn.append(total % 10)
             carry = total // 10
             llist1 = llist1.next
-        
+
         while llist2:
             total = llist2.data + carry
             rtn.append(total % 10)

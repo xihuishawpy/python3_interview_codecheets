@@ -10,7 +10,7 @@ def matrixElementsSum(matrix):
     R = len(matrix) 
     C = len(matrix[0])
     rtn = 0
-    
+
     for c in range(C):
         for r in range(R):
             if matrix[r][c] == 0:

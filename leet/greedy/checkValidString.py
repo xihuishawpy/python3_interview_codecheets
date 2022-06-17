@@ -23,7 +23,7 @@ class Solution:
 
             if cmax < 0:
                 return False
-                
+
         return cmin == 0
                 
         

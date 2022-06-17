@@ -12,7 +12,7 @@ def get_max_profit(stock_prices):
     # Calculate the max profit
     profit = float('-inf')
     minPrice = float('inf')
-    
+
     for i, s in enumerate(stock_prices):
         if i > 0:
             profit = max(profit, s - minPrice)

@@ -7,28 +7,25 @@ class Solution:
         sign = '+'
         i = num = 0
         stk = []
-        
+
         while i < len(s):
             c = s[i]
+            i += 1
             if c == " ":
-                i += 1
                 continue
             elif c.isdigit():
                 num = num * 10 + int(c)
-                i += 1
             else:
-                if sign == '+':
-                    stk.append(num)
-                if sign == '-':
-                    stk.append(-num)
                 if sign == '*':
                     stk.append(stk.pop() * num)
-                if sign == '/':
+                elif sign == '+':
+                    stk.append(num)
+                elif sign == '-':
+                    stk.append(-num)
+                elif sign == '/':
                     stk.append(int(stk.pop() / num))
-                
+
                 sign = c
                 num = 0
-                i += 1
-        
         return sum(stk)
         

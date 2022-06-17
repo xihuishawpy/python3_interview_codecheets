@@ -3,12 +3,12 @@ class Solution:
         if not folder:
             return
         folder.sort()
-        ans, prev = [], folder[0] + '/'
-        
+        ans, prev = [], f'{folder[0]}/'
+
         for f in folder:
             if not f.startswith(prev):
                 ans.append(f)
-                prev = f + '/'
+                prev = f'{f}/'
         return ans
 
 class Solution:

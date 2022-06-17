@@ -22,23 +22,23 @@ from typing import List
 
 def lowestSubSum(nums : List[int]) -> List[int]:
     hm = {}
-    
+
     # dp[i] should be the lowest sum for a range that     ends at and includes i
     l = 0
     minSum = float('inf')
     dpold = nums[0]
     for i in range(1, len(nums)):        
-        
+
         if nums[i] > dpold + nums[i]:
             dp = dpold + nums[i]
             hm[dp] = (l, i)
         else:
             dp = nums[i]
             l = i
-                    
+
         dpold = dp  
         minSum = min(minSum, dp)
-        
+
     return hm[minSum] 
     # capture l at first negative peak
     # capture r at 2nd negative peak
@@ -79,13 +79,13 @@ def lowestSubSum(nums: List[int]) -> List[int]:
     l = 0
     minCoords = (-1, 0)
 
-    for i in range(0, len(nums)):
+    for i in range(len(nums)):
         if minSoFar < 0:
             minSoFar += nums[i]
         else:
             minSoFar = nums[i]
             l = i
-        
+
         if totalMin > minSoFar:
             totalMin = minSoFar
             minCoords = l, i

@@ -19,27 +19,27 @@ class Solution:
         # look for repeated mod values to signal continous subarrays
         # that are a multiple of k
         hm = {0:-1}
-        
+
         ps = 0
-        
+
         for i, n in enumerate(nums):
             ps += n
-            
+
             if ps%k in hm:
                 # Values not adjacent
                 if i - hm[ps%k] > 1:
                     return True
             else:
                 hm[ps%k] = i
-        
+
         return False
 
     def checkSubarraySum(self, nums: List[int], k: int) -> bool:
-        
+
         # look for repeated mod values to signal multiple of k
         hm = {0:-1}
         ps = 0
-        
+
         for i, n in enumerate(nums):
             ps += n
             key = ps%k
@@ -49,5 +49,5 @@ class Solution:
                     return True
             else:
                 hm[key] = i
-        
+
         return False

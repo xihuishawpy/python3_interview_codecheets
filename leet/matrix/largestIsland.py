@@ -10,11 +10,8 @@ class Solution:
         
         
         def dfs(r,c, index):
-            area = 0
             grid[r][c] = index
-            for x,y in neighbors(r,c):
-                if grid[x][y] == 1:
-                    area += dfs(x,y, index)
+            area = sum(dfs(x,y, index) for x, y in neighbors(r,c) if grid[x][y] == 1)
             return area + 1
         
         index = 2
@@ -45,11 +42,8 @@ class Solution:
                     yield x,y
         
         def dfs(r,c,index):
-            area = 0
             grid[r][c] = index
-            for x,y in neighbors(r,c):
-                if grid[x][y] == 1:
-                    area += dfs(x,y,index)
+            area = sum(dfs(x,y,index) for x, y in neighbors(r,c) if grid[x][y] == 1)
             return area+1
         
         # Paint all islands an index number
@@ -86,10 +80,7 @@ class Solution:
         
         def paint(r, c, pnum):
             grid[r][c] = pnum
-            area = 0
-            for x, y in neighbors(r,c):
-                if grid[x][y] == 1:
-                    area += paint(x,y, pnum) 
+            area = sum(paint(x,y, pnum) for x, y in neighbors(r,c) if grid[x][y] == 1)
             return area + 1
                 
         

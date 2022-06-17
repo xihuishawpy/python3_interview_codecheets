@@ -10,11 +10,11 @@ class Solution:
     def subarraysDivByK(self, nums: List[int], k: int) -> int:
         rtn = ps = 0
         hm = collections.Counter([0])
-        
-        for i, n in enumerate(nums):
+
+        for n in nums:
             ps += n
             rtn += hm[ps%k]
             hm[ps%k] += 1
-        
+
         return rtn
                 

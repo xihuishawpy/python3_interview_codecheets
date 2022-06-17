@@ -20,11 +20,7 @@ def length_of_longest_substring(str, k):
     if ht[c] >= ht[maxLetter]:
       maxLetter = c    
 
-    curSub = 0
-    for sc in ht:
-      if sc != maxLetter:
-        curSub += ht[sc]
-    
+    curSub = sum(value for sc, value in ht.items() if sc != maxLetter)
     if curSub <= k:
       lgSub = max(lgSub, i-j+1)
     else:
@@ -33,7 +29,7 @@ def length_of_longest_substring(str, k):
       if ht[rmchar] <= 0:
         del ht[rmchar]
       j += 1
-    
+
   return lgSub
 
 

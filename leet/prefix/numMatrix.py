@@ -30,11 +30,11 @@ Space O(mn)
 class NumMatrix:
 
     def __init__(self, matrix: List[List[int]]):
-        R = len(matrix) 
+        R = len(matrix)
         C = len(matrix[0])
-        
-        self.dp = [[0 for i in range(C+1)] for j in range(R+1)]
-        
+
+        self.dp = [[0 for _ in range(C+1)] for _ in range(R+1)]
+
         for r in range(1, R+1):
             for c in range(1, C+1):
                 self.dp[r][c] = self.dp[r][c-1] + self.dp[r-1][c] - self.dp[r-1][c-1] + matrix[r-1][c-1]

@@ -16,5 +16,5 @@ class Solution:
                 rtn[depth].append(node.val)                
                 stk.append((node.right, depth+1))
                 stk.append((node.left, depth+1))
-                
+
         return rtn

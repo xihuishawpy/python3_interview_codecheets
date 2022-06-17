@@ -12,5 +12,5 @@ class Solution:
             cnt += max(abs(sx-px), abs(sy-py))
             sx = px
             sy = py
-        
+
         return cnt

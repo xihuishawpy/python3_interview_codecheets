@@ -19,9 +19,7 @@ class Codec:
                 rtn.append(str(node.val))
                 for c in node.children:
                     dfs(c)
-                rtn.append('#')
-            else:
-                rtn.append('#')
+            rtn.append('#')
         dfs(root)
         return ' '.join(rtn)
 
@@ -38,13 +36,10 @@ class Codec:
             val = next(vals)
             if val == '#':
                 return None
-            else:
-                node = Node(int(val), [])
-                child = dfs()
-                while child:
-                    node.children.append(child)
-                    child = dfs()
-                return node
+            node = Node(int(val), [])
+            while child := dfs():
+                node.children.append(child)
+            return node
             
         vals = iter(data.split())
         return dfs()

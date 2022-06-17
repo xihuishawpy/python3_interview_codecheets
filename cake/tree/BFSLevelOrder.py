@@ -5,11 +5,10 @@ from collections import deque
 def levelOrder(tree_root):
   queue = deque([tree_root])
   while queue:
-    node = queue.popleft()
-    if node:
-        print(node.value, end=' ')
-        queue.append(node.left)
-        queue.append(node.right)
+    if node := queue.popleft():
+      print(node.value, end=' ')
+      queue.append(node.left)
+      queue.append(node.right)
 
 def levelOrderStack(tree_root):
     stk = [(tree_root, 0)]
